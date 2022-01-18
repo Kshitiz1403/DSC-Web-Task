@@ -1,8 +1,10 @@
-To do - 
-<!-- 1) Add animation for changing the item -->
+https://dsc-web-task.herokuapp.com/
+## Installation
 
-<!-- 2) Improve styling -->
+Clone the repository or download the files
+ 
+Run `npm install` or `yarn install`.
 
-<!-- 3) Make it responsive -->
+Once the `node_modules` are added, run `npm start` or `yarn start` depending upon your package manager preference.
 
-<!-- 4) Add proper links to user's websites -->
+A webpage will be loaded on http://localhost:3000
