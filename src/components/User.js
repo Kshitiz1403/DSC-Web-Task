@@ -8,7 +8,7 @@ import "./styles/User.css"
 const User = ({ data }) => {
 
     return (
-        <Browser background={"#2d3034"} topbarColor={"#3b3e43"} border={"#3b3e43"} boxShadow={"none"}>
+        <Browser background={"#2d3034"} topbarColor={"#3b3e43"} border={"#3b3e43"}>
 
             <div className='container' >
                 <div style={{ alignSelf: 'center', marginBottom:10 }}>{data?.id}</div>

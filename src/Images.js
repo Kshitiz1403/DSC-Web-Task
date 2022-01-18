@@ -25,7 +25,7 @@ const Images = () => {
 
     const Item = ({ data }) => {
         return (
-            <Browser background={"#2d3034"} topbarColor={"#3b3e43"} border={"#3b3e43"} boxShadow={"none"}>
+            <Browser background={"#2d3034"} topbarColor={"#3b3e43"} border={"#3b3e43"}>
                 <div style={{ display: "flex", flexDirection: 'column', alignItems: 'center', width: '100%', height: 400, justifyContent: 'center' }}>
 
                     <img src={data?.thumbnailUrl}
@@ -81,7 +81,7 @@ const Images = () => {
                 <div style={{ display: "block", marginTop: 10, cursor: "pointer" }} onClick={shuffle}>
                     <BsShuffle />
                 </div>
-                
+
             </div>
         </div>
     )

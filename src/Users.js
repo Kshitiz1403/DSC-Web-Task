@@ -42,23 +42,23 @@ const Users = () => {
     }
     return (
         <div className='App'>
-        <div style={{ display: "flex", flexDirection: 'column', alignItems: 'center', width: isDesktopOrLaptop ? 650 : '100%' }}>
-            <div style={{ alignItems: 'center', display: "flex", flexDirection: 'row', justifyContent: 'space-between', width: '90%' }}>
-                <div onClick={previous} style={{ marginRight: 10, cursor: "pointer" }}>
-                    <BsFillArrowLeftCircleFill />
+            <div style={{ display: "flex", flexDirection: 'column', alignItems: 'center', width: isDesktopOrLaptop ? 650 : '100%' }}>
+                <div style={{ alignItems: 'center', display: "flex", flexDirection: 'row', justifyContent: 'space-between', width: '90%' }}>
+                    <div onClick={previous} style={{ marginRight: 10, cursor: "pointer" }}>
+                        <BsFillArrowLeftCircleFill />
+                    </div>
+                    <div style={{ width: '100%' }}>
+                        <User data={userData} />
+                    </div>
+                    <div onClick={next} style={{ marginLeft: 10, cursor: "pointer" }}>
+                        <BsFillArrowRightCircleFill />
+                    </div>
                 </div>
-                <div style={{ width: '100%' }}>
-                    <User data={userData} />
-                </div>
-                <div onClick={next} style={{ marginLeft: 10, cursor: "pointer" }}>
-                    <BsFillArrowRightCircleFill />
-                </div>
-            </div>
 
-            <div style={{ display: "block", marginTop: 10, cursor: "pointer" }} onClick={shuffle}>
-                <BsShuffle />
+                <div style={{ display: "block", marginTop: 10, cursor: "pointer" }} onClick={shuffle}>
+                    <BsShuffle />
+                </div>
             </div>
-        </div>
         </div>
 
     );
