@@ -1,9 +1,7 @@
 import { useMediaQuery } from 'react-responsive';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './App.css';
 import Button from './components/Button';
-import Images from './Images';
-import Users from './Users';
 
 function App() {
 
@@ -14,12 +12,15 @@ function App() {
   return (
     <div className="App">
       <div style={{ display: 'flex', flexDirection: isDesktopOrLaptop ? 'row' : 'column' }}>
+
         <Link to={"/users"} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <Button text="Users" onPress={() => console.log("hello")} />
+          <Button text="Users" />
         </Link>
+
         <Link to={"/images"} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <Button text="Images" onPress={() => console.log("no")} />
+          <Button text="Images" />
         </Link>
+        
       </div>
     </div>
   );

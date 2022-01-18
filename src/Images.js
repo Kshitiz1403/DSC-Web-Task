@@ -13,10 +13,6 @@ const Images = () => {
         query: '(min-width: 649px)'
     })
 
-    // useEffect(() => {
-    //     document.addEventListener("keydown", keyboardHandler)
-    // }, [])
-
     useEffect(() => {
         fetch("https://jsonplaceholder.typicode.com/photos")
             .then(response => {
@@ -31,18 +27,18 @@ const Images = () => {
         return (
             <Browser background={"#2d3034"} topbarColor={"#3b3e43"} border={"#3b3e43"} boxShadow={"none"}>
                 <div style={{ display: "flex", flexDirection: 'column', alignItems: 'center', width: '100%', height: 400, justifyContent: 'center' }}>
+
                     <img src={data?.thumbnailUrl}
                     />
                     <div style={{ marginBottom: 10, marginTop: 10 }}>{data?.id}</div>
                     <div style={{ textAlign: 'center' }}>
                         {data?.title}
                     </div>
+
                 </div>
             </Browser>
-
         )
     }
-    console.log(position)
 
     let imageData = imagesData[position]
 
@@ -57,7 +53,6 @@ const Images = () => {
             setPosition(imagesData.length - 1)
         }
         else {
-
             setPosition(position - 1)
         }
     }
@@ -66,20 +61,10 @@ const Images = () => {
         setPosition((position + 1) % (imagesData.length))
     }
 
-    const keyboardHandler = (event) => {
-        if (event.keyCode === 37) { //for left key
-            previous()
-        }
-        if (event.keyCode === 39) { //right
-            next()
-        }
-        if (event.keyCode == 32) { //space
-            shuffle()
-        }
-    }
     return (
         <div className='App'>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: isDesktopOrLaptop ? 650 : '100%' }}>
+
                 <div style={{ alignItems: 'center', display: "flex", flexDirection: 'row', justifyContent: 'space-between', width: '90%' }}>
                     <div onClick={previous} style={{ marginRight: 10, cursor: "pointer" }}>
                         <BsFillArrowLeftCircleFill />
@@ -96,6 +81,7 @@ const Images = () => {
                 <div style={{ display: "block", marginTop: 10, cursor: "pointer" }} onClick={shuffle}>
                     <BsShuffle />
                 </div>
+                
             </div>
         </div>
     )
