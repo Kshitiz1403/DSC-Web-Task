@@ -1,19 +1,69 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { Browser } from 'react-window-ui'
+import { vmax, vmin } from '../helperFunctions/viewPort'
 import "./styles/User.css"
 
 
 const User = ({ data }) => {
 
     return (
-        <div className='container' >
-            <div>{data?.id}</div>
-            <div>Name - {data?.name}</div>
-            <div>Username - {data?.username}</div>
-            <div>Email - {data?.email}</div>
-            <div>Name - {data?.address.street}</div>
-            <div>Phone - {data?.phone}</div>
-            <div>Website - <a href={data?.website}>{data?.website}</a></div>
-        </div>
+        <Browser background={"#2d3034"} topbarColor={"#3b3e43"} border={"#3b3e43"} boxShadow={"none"}>
+
+            <div className='container' >
+                <div style={{ alignSelf: 'center', marginBottom:10 }}>{data?.id}</div>
+                <div className='item'>
+                    <div>Name - </div>
+                    <div>{data?.name}</div>
+                </div>
+                <div className='item'>
+                    <div>Username - </div>
+                    <div>{data?.username}</div>
+                </div>
+                <div className='item'>
+                    <div>Email - </div>
+                    <div>{data?.email}</div>
+                </div>
+                <div className='item'>
+                    <div>Name - </div>
+                    <div>{data?.name}</div>
+                </div>
+                <div className='item'>
+                    <div>Phone - </div>
+                    <div>{data?.phone}</div>
+                </div>
+                <div className='item'>
+                    <div>Website - </div>
+                    <a target={'_blank'} href={`http://${data?.website}`}>{data?.website}</a>
+                </div>
+                <div className='item'>
+                    <div>Address - </div>
+                    <div className='details'>
+                        <div>
+                            {data?.address.suite},  {data?.address.street},
+                        </div>
+                        <div>
+                            {data?.address.city}, {data?.address.zipcode}
+                        </div>
+                        <div>lat: {data?.address.geo.lat}, lng: {data?.address.geo.lng}</div>
+                    </div>
+                </div>
+                <div className='item'>
+                    <div>Company - </div>
+                    <div className='details'>
+                        <div>
+                            {data?.company.name}
+                        </div>
+                        <div>
+                            {data?.company.catchPhrase}
+                        </div>
+                        <div>
+                            {data?.company.bs}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Browser>
     )
 }
 

@@ -2,6 +2,7 @@ import './App.css';
 import User from './components/User';
 import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill, BsShuffle } from "react-icons/bs";
 import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 const Users = () => {
     useEffect(() => {
@@ -17,6 +18,9 @@ const Users = () => {
 
     const [users, setUsers] = useState([])
     const [position, setPosition] = useState(0)
+    const isDesktopOrLaptop = useMediaQuery({
+        query: '(min-width: 649px)'
+    })
 
     let userData = users[position]
 
@@ -37,22 +41,26 @@ const Users = () => {
         setPosition((position + 1) % (users.length))
     }
     return (
-        <div className='App' style={{ display: "flex", }}>
-            <div style={{ alignItems: 'center', display: "flex", flexDirection: 'row', }}>
-                <div onClick={previous} style={{ marginRight: 10 }}>
+        <div className='App'>
+        <div style={{ display: "flex", flexDirection: 'column', alignItems: 'center', width: isDesktopOrLaptop ? 650 : '100%' }}>
+            <div style={{ alignItems: 'center', display: "flex", flexDirection: 'row', justifyContent: 'space-between', width: '90%' }}>
+                <div onClick={previous} style={{ marginRight: 10, cursor: "pointer" }}>
                     <BsFillArrowLeftCircleFill />
                 </div>
-
-                <User data={userData} />
-                <div onClick={next} style={{ marginLeft: 10 }}>
+                <div style={{ width: '100%' }}>
+                    <User data={userData} />
+                </div>
+                <div onClick={next} style={{ marginLeft: 10, cursor: "pointer" }}>
                     <BsFillArrowRightCircleFill />
                 </div>
             </div>
 
-            <div style={{ display: "block", marginTop: 10 }} onClick={shuffle}>
+            <div style={{ display: "block", marginTop: 10, cursor: "pointer" }} onClick={shuffle}>
                 <BsShuffle />
             </div>
         </div>
+        </div>
+
     );
 }
 export const randomIntFromInterval = (min, max) => { // min and max included 
