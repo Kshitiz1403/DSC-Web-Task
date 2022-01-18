@@ -4,7 +4,7 @@ import "./styles/Button.css"
 const Button = (props) => {
     const [visible, setVisible] = useState(false)
     return (
-        <div className='container' style={{
+        <div className='btnContainer' style={{
             backgroundColor: visible ? 'rgba(255,255,255,0.1)' : null,
             width: 200,
             height: 200,
