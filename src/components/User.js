@@ -11,7 +11,7 @@ const User = ({ data }) => {
         <Browser background={"#2d3034"} topbarColor={"#3b3e43"} border={"#3b3e43"}>
 
             <div className='container' >
-                <div style={{ alignSelf: 'center', marginBottom:10 }}>{data?.id}</div>
+                <div style={{ alignSelf: 'center', marginBottom: 10 }}>{data?.id}</div>
                 <div className='item'>
                     <div>Name - </div>
                     <div>{data?.name}</div>
@@ -40,12 +40,12 @@ const User = ({ data }) => {
                     <div>Address - </div>
                     <div className='details'>
                         <div>
-                            {data?.address.suite},  {data?.address.street},
+                            {data?.address.suite}{data ? "," : null}  {data?.address.street}{data ? "," : null}
                         </div>
                         <div>
-                            {data?.address.city}, {data?.address.zipcode}
+                            {data?.address.city}{data ? "," : null} {data?.address.zipcode}
                         </div>
-                        <div>lat: {data?.address.geo.lat}, lng: {data?.address.geo.lng}</div>
+                        <div>{data ? "lat:" : null}{data?.address.geo.lat}{data ? ", lng:" : null}{data?.address.geo.lng}</div>
                     </div>
                 </div>
                 <div className='item'>
