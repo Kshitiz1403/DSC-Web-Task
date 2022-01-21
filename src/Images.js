@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill, BsShuffle } from "react-icons/bs";
 import { useMediaQuery } from 'react-responsive';
 import { Browser } from 'react-window-ui';
-import { randomIntFromInterval } from './Users';
+import { randomIntFromInterval } from './helperFunctions/randomIntFromInterval';
 
 
 const Images = () => {

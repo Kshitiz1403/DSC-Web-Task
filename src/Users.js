@@ -3,6 +3,7 @@ import User from './components/User';
 import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill, BsShuffle } from "react-icons/bs";
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { randomIntFromInterval } from './helperFunctions/randomIntFromInterval';
 
 const Users = () => {
     useEffect(() => {
@@ -62,9 +63,6 @@ const Users = () => {
         </div>
 
     );
-}
-export const randomIntFromInterval = (min, max) => { // min and max included 
-    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 export default Users;
